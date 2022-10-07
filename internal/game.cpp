@@ -53,7 +53,7 @@ auto Game::Run(const std::unique_ptr<Input>& input,
     }
 
     std::cout << "The end! The " << grid->ToString(curr_player_)
-              << "-player has won!\n\n";
+              << "-player has won!\n";
     grid->Reset();
   } while (input->GetAnswerAboutReplay());
 
