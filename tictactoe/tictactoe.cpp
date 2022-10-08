@@ -2,9 +2,9 @@
 
 #include <memory>
 
-#include "internal/input.h"
-#include "internal/grid.h"
-#include "internal/game.h"
+#include "input.h"
+#include "grid.h"
+#include "game.h"
 
 namespace tictactoe {
 

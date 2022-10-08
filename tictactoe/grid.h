@@ -1,5 +1,5 @@
-#ifndef TICTACTOE_INTERNAL_GRID_H_
-#define TICTACTOE_INTERNAL_GRID_H_
+#ifndef TICTACTOE_GRID_H_
+#define TICTACTOE_GRID_H_
 
 #include <array>
 #include <string>
@@ -13,6 +13,7 @@ const int kGridSize{3};
 // Sometimes you need to know the square size.
 const int kGridSquareSize{kGridSize * kGridSize};
 
+// A fixed-size grid class.
 class Grid {
  public:
   // Print a grid with cell numbers (if the cell is empty).
@@ -56,4 +57,4 @@ class Grid {
 
 }  // namespace tictactoe
 
-#endif  // TICTACTOE_INTERNAL_GRID_H_
+#endif  // TICTACTOE_GRID_H_

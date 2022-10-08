@@ -6,9 +6,9 @@ namespace tictactoe {
 
 auto Grid::Print() const -> void {
   int cell_num{0};
-  for (int row = 0; row < kGridSize; ++row) {
-    for (int col = 0; col < kGridSize; ++col) {
-      auto cell_state{GetCellState(row, col)};
+  for (int row{0}; row < kGridSize; ++row) {
+    for (int col{0}; col < kGridSize; ++col) {
+      player_label_t cell_state{GetCellState(row, col)};
       if (cell_state) {
         if (col != kGridSize - 1) {
           std::cout << ToString(cell_state) << " | ";

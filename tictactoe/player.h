@@ -1,8 +1,8 @@
 // Super-powerful code that was definitely worth a separate file.
 // Perhaps it should be rewritten...
 
-#ifndef TICTACTOE_INTERNAL_PLAYER_H_
-#define TICTACTOE_INTERNAL_PLAYER_H_
+#ifndef TICTACTOE_PLAYER_H_
+#define TICTACTOE_PLAYER_H_
 
 #include <optional>
 
@@ -14,4 +14,4 @@ using player_label_t = std::optional<PlayerLabel>;
 
 }  // namespace tictactoe
 
-#endif  // TICTACTOE_INTERNAL_PLAYER_H_
+#endif  // TICTACTOE_PLAYER_H_

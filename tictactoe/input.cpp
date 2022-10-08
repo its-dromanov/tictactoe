@@ -6,7 +6,7 @@
 namespace tictactoe {
 
 template <class T>
-auto Input::GetSingleUserInput(const std::string& msg) const -> T {
+auto Input::GetSingleInput(const std::string& msg) const -> T {
   std::string str;
   T res;
   while (std::cout << msg && std::getline(std::cin, str)) {
@@ -15,10 +15,10 @@ auto Input::GetSingleUserInput(const std::string& msg) const -> T {
   }
 }
 
-auto Input::GetCellNumber(const std::unique_ptr<tictactoe::Grid>& grid,
+auto Input::GetCellNumber(const std::unique_ptr<Grid>& grid,
                           const std::string& player_label) const -> int {
   while (true) {
-    auto cell_num = GetSingleUserInput<int>("[" + player_label +
+    auto cell_num = GetSingleInput<int>("[" + player_label +
         "] Enter the cell number: ");
     if (cell_num >= 0 && cell_num < kGridSquareSize &&
         !grid->GetCellState(cell_num)) {
@@ -35,7 +35,7 @@ auto Input::GetCellNumber(const std::unique_ptr<tictactoe::Grid>& grid,
 
 auto Input::GetFirstPlayer() const -> player_label_t {
   while (true) {
-    auto player_mark = GetSingleUserInput<char>(
+    auto player_mark = GetSingleInput<char>(
         "Enter the mark of the player who will move first (x/o): ");
     if (player_mark == 'x') {
       return PlayerLabel::kMarkX;
@@ -49,7 +49,7 @@ auto Input::GetFirstPlayer() const -> player_label_t {
 
 auto Input::GetAnswerAboutReplay() const -> bool {
   while (true) {
-    auto answer = GetSingleUserInput<char>(
+    auto answer = GetSingleInput<char>(
         "Do you want to play again? (y/n): ");
     if (answer == 'y') {
       return true;

@@ -6,14 +6,14 @@ namespace tictactoe {
 
 auto Game::ProcessPlayerMove(const std::unique_ptr<Input>& input,
                              std::unique_ptr<Grid>& grid) -> bool {
-  int cell_num = input->GetCellNumber(grid, grid->ToString(curr_player_));
+  int cell_num{input->GetCellNumber(grid, grid->ToString(curr_player_))};
 
   grid->SetCellState(cell_num, curr_player_);
 
   // Count the number of marks in different directions.
   int horiz{0}, vert{0}, l_diag{0}, r_diag{0};
-  int rev_i{kGridSize - 1};  // For counting on the right diagonal (reverse index).
-  for (int i = 0; i < kGridSize; ++i) {
+  // rev_i (reverse index) - for counting on the right diagonal.
+  for (int i{0}, rev_i{kGridSize - 1}; i < kGridSize; ++i, --rev_i) {
     // Horizontally.
     if (grid->GetCellState(grid->GetRow(cell_num), i) == curr_player_) {
       ++horiz;
@@ -30,7 +30,6 @@ auto Game::ProcessPlayerMove(const std::unique_ptr<Input>& input,
     if (grid->GetCellState(rev_i, i) == curr_player_) {
       ++r_diag;
     }
-    --rev_i;
   }
 
   // Checking the victory of the current player in any direction.

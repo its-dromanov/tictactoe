@@ -3,4 +3,4 @@ project(tictactoe)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(tictactoe tictactoe.cpp tictactoe.h internal/game.cpp internal/game.h internal/grid.cpp internal/grid.h internal/player.h internal/input.cpp internal/input.h)
+add_executable(tictactoe tictactoe/tictactoe.cpp tictactoe/tictactoe.h tictactoe/game.cpp tictactoe/game.h tictactoe/grid.cpp tictactoe/grid.h tictactoe/player.h tictactoe/input.cpp tictactoe/input.h)

@@ -1,5 +1,5 @@
-#ifndef TICTACTOE_INTERNAL_GAME_H_
-#define TICTACTOE_INTERNAL_GAME_H_
+#ifndef TICTACTOE_GAME_H_
+#define TICTACTOE_GAME_H_
 
 #include <memory>
 
@@ -8,6 +8,8 @@
 
 namespace tictactoe {
 
+// A main gameplay class.
+// This is where all the elements come together to create the gameplay.
 class Game {
  public:
   // Starting the main game cycle.
@@ -28,9 +30,10 @@ class Game {
         PlayerLabel::kMarkO : PlayerLabel::kMarkX;
   }
 
+  // The current player. Perhaps we should call it something else?
   player_label_t curr_player_;
 };
 
 }  // namespace tictactoe
 
-#endif  // TICTACTOE_INTERNAL_GAME_H_
+#endif  // TICTACTOE_GAME_H_
